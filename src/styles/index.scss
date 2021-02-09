@@ -24,6 +24,7 @@
     height: 50px;
   width: 50px;
   border-radius: 50%;
+  opacity: 0.6;
 }
 
 .red-light {
@@ -34,8 +35,25 @@
 .yellow-light {
     background-color: yellow;
     margin-bottom: 0.5rem;
+    
 }
 
 .green-light {
     background-color: green;
+}
+
+// Activada onClick
+#activeRed {
+    box-shadow: 0 0 20px #FF3845;
+    opacity: initial;
+}
+
+#activeYellow {
+    box-shadow: 0 0 20px orange;
+    opacity: initial;
+}
+
+#activeGreen {
+    box-shadow: 0 0 20px #15AD6E;
+    opacity: initial;
 }

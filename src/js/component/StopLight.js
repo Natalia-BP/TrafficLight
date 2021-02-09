@@ -1,26 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 
-export class StopLight extends React.Component {
-	render() {
-		return (
-			<div>
-				{/* Vertical Line */}
-				<div className="stickArea">
-					<div className="trafficStick"></div>
-				</div>
+export const StopLight = () => {
+	const [color, setColor] = useState("yellow");
 
-				{/* Container of lights */}
-				<div className="trafficMain">
-					{/* Red Light */}
-					<div className="red-light"></div>
-
-					{/* Yellow Light */}
-					<div className="yellow-light"></div>
-
-					{/* Green Light */}
-					<div className="green-light"></div>
-				</div>
+	return (
+		<div>
+			{/* Vertical Line */}
+			<div className="stickArea">
+				<div className="trafficStick"></div>
 			</div>
-		);
-	}
-}
+
+			{/* Container of lights */}
+			<div className="trafficMain">
+				{/* Red Light */}
+				<div
+					className="red-light"
+					id={color == "red" ? "activeRed" : ""}
+					onClick={() => {
+						setColor("red");
+					}}></div>
+
+				{/* Yellow Light */}
+				<div
+					className="yellow-light"
+					id={color == "yellow" ? "activeYellow" : ""}
+					onClick={() => {
+						setColor("yellow");
+					}}></div>
+
+				{/* Green Light */}
+				<div
+					className="green-light"
+					id={color == "green" ? "activeGreen" : ""}
+					onClick={() => {
+						setColor("green");
+					}}></div>
+			</div>
+		</div>
+	);
+};
